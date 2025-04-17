@@ -27,8 +27,7 @@ namespace MauiAppTempoAgora
                         dados_previsao = $"Latitude: {t.lat}\n" + // Obtém a latitude
                                         $"Longitude: {t.lon}\n" + // Obtém a longitude
                                         $"Descrição: {t.description}\n" + // Obtém a descrição do tempo
-                                        $"Temperatura mínima: {t.temp_min}°C\n" + // Obtém a temperatura mínima
-                                        $"Temperatura máxima: {t.temp_max}°C\n" + // Obtém a temperatura máxima
+                                        $"Temperatura atual: {t.temp}°C\n" + // Obtém a temperatura
                                         $"Visibilidade: {t.visibility} m\n" + // Obtém a visibilidade
                                         $"Velocidade do vento: {t.speed} m/s\n" + // Obtém a velocidade do vento
                                         $"Nascer do sol: {t.sunrise}\n" + // Obtém o horário do nascer do sol
@@ -42,7 +41,7 @@ namespace MauiAppTempoAgora
                         wv_mapa.Source = mapa;
 
                     }
-                    else //Verifica se o objeto Tempo é nulo
+                    else
                     {
                         lbl_res.Text = "Sem dados de previsão.";
                     }
@@ -54,7 +53,8 @@ namespace MauiAppTempoAgora
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Ops", ex.Message, "OK"); // Exibe um alerta em caso de erro
+                lbl_res.Text = "Cidade não encontrada.";
+                await DisplayAlert("Cidade não encontrada.", "Por favor, verifique a ortografia.", "OK"); // Exibe um alerta em caso de erro
             } // Fecha try-catch
         } // Fecha método Buscar_Previsao_Clicked
 

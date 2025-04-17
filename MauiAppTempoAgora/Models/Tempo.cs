@@ -4,8 +4,7 @@
     {
         public double? lon { get; set; } // Longitude
         public double? lat { get; set; } // Latitude
-        public double? temp_min { get; set; } // Temperatura mínima
-        public double? temp_max { get; set; } // Temperatura máxima
+        public double? temp { get; set; } // Temperatura
         public int? visibility { get; set; } // Visibilidade
         public double? speed { get; set; } // Velocidade do vento
         public string? sunrise { get; set; } // Nascer do sol // String para converter para DateTime (porque estava em segundos desde janeiro de 1970)

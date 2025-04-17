@@ -35,8 +35,7 @@ namespace MauiAppTempoAgora.Services
                         lon = (double)rascunho["coord"]["lon"], // Atribui a longitude
                         description = (string)rascunho["weather"][0]["description"], // Atribui a descrição do tempo // Acessa o primeiro elemento do array "weather" (0)
                         main = (string)rascunho["weather"][0]["main"], // Atribui a condição do tempo // Acessa o primeiro elemento do array "weather" (0)
-                        temp_min = (double)rascunho["main"]["temp_min"], // Atribui a temperatura mínima // Acessa o objeto "main"
-                        temp_max = (double)rascunho["main"]["temp_max"], // Atribui a temperatura máxima // Acessa o objeto "main"
+                        temp = (double)rascunho["main"]["temp"], // Atribui a temperatura
                         visibility = (int)rascunho["visibility"], // Atribui a visibilidade // Acessa o objeto "visibility"
                         speed = (double)rascunho["wind"]["speed"], // Atribui a velocidade do vento // Acessa o objeto "wind"
                         sunrise = sunrise.ToString(),// Atribui o horário do nascer do sol // Converte para string
