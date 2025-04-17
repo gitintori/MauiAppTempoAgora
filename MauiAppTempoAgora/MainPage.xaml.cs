@@ -16,8 +16,16 @@ namespace MauiAppTempoAgora
             try
             {
                 string cidade = txt_cidade.Text; // Obtém o texto da caixa de entrada
+
                 if (!string.IsNullOrEmpty(cidade)) // Verifica se a caixa de entrada está vazia
                 {
+                    if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+                    {
+                        await DisplayAlert("Sem conexão", "Você está offline. Conecte-se à internet para ver a previsão.", "OK");
+                        lbl_res.Text = "Operação requer internet";
+                        return;
+                    }
+
                     Tempo? t = await DataService.GetPrevisao(txt_cidade.Text); // Chama o serviço para obter a previsão do tempo
 
                     if (t != null) // Verifica se o objeto Tempo não é nulo
