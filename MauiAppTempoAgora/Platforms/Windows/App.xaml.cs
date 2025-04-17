@@ -17,6 +17,9 @@ namespace MauiAppTempoAgora.WinUI
         public App()
         {
             this.InitializeComponent();
+
+            // token nao funciona porque o microsoft pede para pagar o azure para pegar o token
+            Platform.MapServiceToken = "z55QeeUbRf6mRhiZDgcP~KpONY3zL1wH1GBeb590zGg~Aky4ub2z4AnvS2RMdaU2VoYIfuWnoGDtOoUfgAi9CngN5iWe3Cps0cGqUdAnBVXT";
         }
 
         protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();

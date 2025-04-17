@@ -8,10 +8,15 @@
             Padding="30, 0"
             Spacing="25">
 
+            <Button Text="Minha Localização" Clicked="Minha_Localizacao_Clicked" />
+            <Label x:Name="lbl_coords" /> <!-- Label para exibir as coordenadas da localização atual -->
+
             <Entry x:Name="txt_cidade" /> <!-- Campo de texto para o usuário digitar a cidade  -->
-            <Button Text="Buscar" Clicked="Buscar_Clicked" /> <!-- Botão pra buscar o clima-->
+            <Button Text="Buscar previsão" Clicked="Buscar_Previsao_Clicked" /> <!-- Botão pra buscar o clima-->
             
             <Label x:Name="lbl_res" /> <!-- Label para exibir o resultado -->
+
+            <WebView x:Name="wv_mapa" HeightRequest="500" /> <!-- Exibir o mapa do windy -->
 
         </VerticalStackLayout>
     </ScrollView>
